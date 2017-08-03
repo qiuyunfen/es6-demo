@@ -12,3 +12,11 @@ for(let i = 0; i < 3; i++) {
     let i = 'abc';
     console.log(i);
 }
+
+//不存在变量提升
+console.log(foo);//undefined
+var foo = 'var';
+
+//console.log(bar);//bar is not defined
+let bar = 'let';
+
