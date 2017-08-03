@@ -32,3 +32,12 @@ if(true) {
     tmp = 'qwe';
     console.log(tmp);
 }
+//es6 块级作用域
+function f1() {
+    let n = 5;
+    if(true) {
+        let n = 10;
+    }
+    console.log('block' + n);
+}
+f1();
