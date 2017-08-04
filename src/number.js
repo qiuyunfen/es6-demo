@@ -85,7 +85,15 @@ console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER)) // true
 console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER)) // true
 console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1)) // false
 
-
+//去除小数部分
+console.log(Math.trunc(2.3));//2
+console.log(Math.trunc(-0.123));//-0
+//对于不是数值的，先使用Number转换为数字
+console.log(Math.trunc('12.45'));//12
+//对于空值和无法转换为数字的，返回NaN
+console.log(Math.trunc(NaN));//NaN
+console.log(Math.trunc('true'));//NaN
+console.log(Math.trunc());//NaN
 
 
 
