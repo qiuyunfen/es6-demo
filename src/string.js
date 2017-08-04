@@ -11,3 +11,6 @@ console.log(s.includes('Hello', 6));//第二个参数表示从当前位置道字
 
 console.log(s.startsWith('Hello'));
 console.log(s.startsWith('world', 6));
+
+console.log(s.endsWith('!'));
+console.log(s.endsWith('Hello', 5));//针对前n个字符
