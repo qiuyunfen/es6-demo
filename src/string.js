@@ -5,3 +5,6 @@ for(let codePoint of text) {
     console.log(codePoint);
 }
 
+var s = 'Hello world!';
+console.log(s.includes('o')); // true
+console.log(s.includes('Hello', 6));//第二个参数表示从当前位置道字符串结束
