@@ -63,6 +63,29 @@ Number.parseFloat('12.34#');//12.34
 //极小值，用于表示计算的误差
 Number.EPSILON;
 
+//javascript最大可表达数字,JavaScript能够准确表示的整数范围在-2^53到2^53之间（不含两个端点）
+console.log(Number.MAX_SAFE_INTEGER);//9007199254740991
+console.log(Number.MIN_SAFE_INTEGER);//-9007199254740991
+
+//isSafeInteger()表示value是否在MAX_SAFE_INTEGER和MIN_SAFE_INTEGER范围内
+Number.isSafeInteger('a') // false
+Number.isSafeInteger(null) // false
+Number.isSafeInteger(NaN) // false
+Number.isSafeInteger(Infinity) // false
+Number.isSafeInteger(-Infinity) // false
+
+Number.isSafeInteger = function(value) {
+    return typeof value === 'number' &&
+    Math.round(value) === value && 
+    value <= Number.MAX_SAFE_INTEGER && value >= Number.MIN_SAFE_INTEGER;
+}
+
+console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1)) // false
+console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER)) // true
+console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER)) // true
+console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1)) // false
+
+
 
 
 
