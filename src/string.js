@@ -29,3 +29,4 @@ console.log('x'.repeat(NaN));
 //参数如果是字符串，先转为数字
 console.log('x'.repeat('3'));//xxx
 console.log('x'.repeat('na'));//''
+
