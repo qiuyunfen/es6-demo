@@ -41,3 +41,11 @@ function f1() {
     console.log('block' + n);
 }
 f1();
+
+//const变量具有与let一样的特性，块级作用域，tdz，不能变量提升，不能重复命名
+//同时，const指定的变量的（内存地址）不能改变，因此将const设置为对象时要小心
+const const_var = {};
+const_var.foo = 'abc';
+console.log(const_var.foo);
+
+//const_var = {};//TypeError: Assignment to constant variable
