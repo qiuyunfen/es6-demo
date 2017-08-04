@@ -43,3 +43,18 @@ function* fibs() {
 
 let [first, second, third, fourth, fifth] = fibs();
 console.log('fifth = ' + fifth);
+
+//解构赋值允许设置默认值
+let [defaultfoo = true] = [];
+console.log(defaultfoo);
+
+//注意，ES6 内部使用严格相等运算符（===），判断一个位置是否有值。所以，如果一个数组成员不严格等于undefined，默认值是不会生效的
+[x = 1] = [null];
+console.log(x);//null
+
+//默认值可以引用解构赋值的其他变量，但该变量必须已经声明
+[x = 1, y = x] = [];
+[x = 1, y = x] = [1];
+[x = 1, y = x] = [1, 2];
+//x1用到y1时，y1还没有被声明
+//let [x1 = y1, y1 = 1] = [];//y1 is not defined
