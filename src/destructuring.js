@@ -27,3 +27,19 @@ console.log(g);
 //let [foo5] = NaN;//undefined is not a function
 //let [foo6] = {};
 
+//Set 结构也可使用解构赋值
+let [x, y, z] = new Set(['a', 'b', 'c']);
+console.log(x);
+
+//某种数据结构具有iterator接口，都能进行解构赋值
+function* fibs() {
+    let a = 0;
+    let b = 1;
+    while(true) {
+        yield a;
+        [a, b] = [b, a + b];
+    }
+}
+
+let [first, second, third, fourth, fifth] = fibs();
+console.log('fifth = ' + fifth);
